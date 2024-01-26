@@ -1,9 +1,11 @@
 from django.urls import path, include
 
-from .views import Livrelist,Livredetails,Auteurlist,Auteurdetails,Emprunteurlist,Emprunteurdetails
+from .views import Userlist,Userdetails,Livrelist,Livredetails,Auteurlist,Auteurdetails,Emprunteurlist,Emprunteurdetails
 
 
 urlpatterns=[
+    path('user/',Userlist.as_view()),
+    path('user/<int:pk>/',Userdetails.as_view()),
     path('auteur/',Auteurlist.as_view()),
     path('auteur/<int:pk>/',Auteurdetails.as_view()),
     path('livres/',Livrelist.as_view()),
